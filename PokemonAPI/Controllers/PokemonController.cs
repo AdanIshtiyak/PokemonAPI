@@ -64,6 +64,30 @@ namespace PokemonAPI.Controllers
             
         }
 
+        [HttpPost]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        public IActionResult CreatePokemon([FromQuery] int ownerID, [FromQuery] int categoryId,[FromBody] PokemonDto pokemonCreate)
+        {
+            if (pokemonCreate == null)
+                return BadRequest(ModelState);
+
+            var pokemons = _pokemonRepository.GetPokemons()
+                .Where(x => x.Name.Trim().ToUpper() == pokemonCreate.Name.TrimEnd().ToUpper())
+                .FirstOrDefault();
+            
+            if (pokemons != null)
+            {
+                ModelState.AddModelError("", "Owner alredy exists");
+                return StatusCode(422, ModelState);
+            }
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var pokemonMap = _mapper.Map<Pokemon>(pokemonCreate)
+        }
+
 
     }
 }

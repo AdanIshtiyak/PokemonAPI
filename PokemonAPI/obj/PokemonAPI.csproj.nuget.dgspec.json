@@ -13,8 +13,12 @@
         "packagesPath": "C:\\Users\\Adan\\.nuget\\packages\\",
         "outputPath": "D:\\project\\PokemonAPI\\PokemonAPI\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\DevExpress\\Components\\Offline Packages"
+        ],
         "configFilePaths": [
           "C:\\Users\\Adan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.1.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "D:\\DevExpress\\Components\\System\\Components\\Packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
